@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">app12</string>
+    <string name="happy">Happy</string>
+    <string name="sad">Sad</string>
+    <string name="angry">Angry</string>
+    <string name="sick">Sick</string>
+    <string name="welcome">Welcome!</string>
+    <string name="question">How Are You Feeling?</string>
+    <string name="happyBtn">Happy Button</string>
+    <string name="sadBtn">Sad Button</string>
+    <string name="angryBtn">Angry Button</string>
+    <string name="sickBtn">Sick Button</string>
+</resources>
