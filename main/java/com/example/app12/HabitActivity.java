@@ -10,6 +10,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.TeamBee.WellbeingTracker.R;
@@ -23,6 +26,7 @@ import java.util.ArrayList;
 public class HabitActivity extends AppCompatActivity {
     //ui
     private ArrayList<items> itemList;
+    private ImageView I;
     private RecyclerView recyclerView;
     private Database database;
     private final AppCompatActivity activity = HabitActivity.this;
@@ -39,12 +43,14 @@ public class HabitActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habit_rec);
-        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler1);
         itemList = new ArrayList<>();
+        I = findViewById(R.id.image99);
 
         setItemInfo();
         setAdapter();
         initObject();
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 
@@ -101,27 +107,24 @@ public class HabitActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    private void setItemInfo() {
+
+    private void setItemInfo(){
         itemList.add(new items(R.drawable.veg, "Have you eaten vegetables today"));
         itemList.add(new items(R.drawable.weights, "Have you exercised today?"));
         itemList.add(new items(R.drawable.water, "Have you drank water today?"));
         itemList.add(new items(R.drawable.fruit, "Have you eaten fruit today?"));
+
+        I.setOnClickListener(v -> {
+            Toast.makeText(getApplicationContext(),"Button Clicked", Toast.LENGTH_LONG).show();
+        });
     }
 
-    private void onListItemClick(ArrayList<items> l, View v, int position, long id){
-        addItemToSQL();
-        Toast.makeText(getApplicationContext(), "position => " + position +
-                        " - ListView =>" + l +
-                        " - View => " + v +
-                        " - id => " + id
-                , Toast.LENGTH_LONG).show();
-    }
+
+
 
     private void addItemToSQL() {
         database.addItem(smiley, fruit, veg, exercise, water);
     }
-
-
 
 
 }
