@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Wellbeing"
+        android:icon="@drawable/wellbeing_selector"
+        android:title="@string/wellbeing" />
+
+    <item
+        android:id="@+id/Home"
+        android:icon="@drawable/home_selector"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/Help"
+        android:icon="@drawable/help_selector"
+        android:title="@string/help" />
+
+    <item
+        android:id="@+id/Tracker"
+        android:icon="@drawable/tracker_selector"
+        android:title="@string/tracker" />
+
+    <item
+        android:id="@+id/Calendar"
+        android:icon="@drawable/calendar_selector"
+        android:title="@string/calendar" />
+
+
+</menu>
